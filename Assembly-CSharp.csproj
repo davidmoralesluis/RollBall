@@ -45,9 +45,36 @@
     <Analyzer Include="/home/dam2a/Unity/Hub/Editor/2022.2.3f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets/Player.cs" />
-     <Compile Include="Assets/PlayerController.cs" />
+     <Compile Include="Assets/Script/PlayerController2.cs" />
+     <Compile Include="Assets/Script/Rotaitor.cs" />
+     <Compile Include="Assets/Script/PlayerController1.cs" />
+     <Compile Include="Assets/Script/Player.cs" />
+     <Compile Include="Assets/Script/CameraController.cs" />
+     <Compile Include="Assets/Script/CameraRot.cs" />
      <Folder Include="Assets" />
+     <Folder Include="Assets/Ground textures pack/Lava" />
+     <Folder Include="Assets/Ground textures pack/Ground 02" />
+     <Folder Include="Assets/Prefab" />
+     <Folder Include="Assets/Ground textures pack/Grass 03" />
+     <Folder Include="Assets/Ground textures pack/Ground &amp; moss" />
+     <Folder Include="Assets/Ground textures pack/Ground &amp; rocks 02" />
+     <Folder Include="Assets/Ground textures pack/Ground &amp; rocks 03" />
+     <Folder Include="Assets/Ground textures pack/Grass 05" />
+     <Folder Include="Assets/Ground textures pack/Ground &amp; rocks 01" />
+     <Folder Include="Assets/Material" />
+     <Folder Include="Assets/Ground textures pack/Grass 06" />
+     <Folder Include="Assets/Ground textures pack/Ground &amp; weeds" />
+     <Folder Include="Assets/Ground textures pack/Grass &amp; rocks" />
+     <Folder Include="Assets/Ground textures pack/Grass 04" />
+     <Folder Include="Assets/Ground textures pack/Grass 01" />
+     <Folder Include="Assets/Ground textures pack/Dry ground" />
+     <Folder Include="Assets/Ground textures pack/Grass 01/Materials" />
+     <Folder Include="Assets/Ground textures pack/Ground 01" />
+     <Folder Include="Assets/Ground textures pack" />
+     <Folder Include="Assets/Ground textures pack/Grass &amp; dead leafs 01" />
+     <Folder Include="Assets/Ground textures pack/Grass &amp; dead leafs 02" />
+     <Folder Include="Assets/Ground textures pack/Grass 02" />
+     <Folder Include="Assets/Script" />
      <Folder Include="Assets/Scenes" />
      <Reference Include="UnityEngine">
      <HintPath>/home/dam2a/Unity/Hub/Editor/2022.2.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
