@@ -7,11 +7,15 @@ using UnityEngine.UIElements;
 
 public class PlayerController1 : MonoBehaviour
 {
-    public float speed = 5;
+    public float speed = 500;
 
     private Rigidbody rb;
+    public Vector3 posicionInical;
 
-    public float contador;
+    public static float contadorAmarillo;
+    public static float cambioCamera;
+    public static bool fin;
+    
 
     public float movementX;
     public float movementY;
@@ -24,8 +28,9 @@ public class PlayerController1 : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         // mensaje para la consola del Unity
         Debug.Log("Estoy en Start ");
-
-        contador = 0;
+        posicionInical = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        cambioCamera = 1;
+        fin = false;
     }
 
     /**
@@ -45,7 +50,15 @@ public class PlayerController1 : MonoBehaviour
     {
         // para el teclado
         Vector3 movement = new Vector3( movementX, 0.0f, movementY);
-        rb.AddForce(movement * speed);
+        rb.AddForce(movement * speed *(Time.deltaTime));
+        
+        
+        //Debug.Log("Deltatime -> "+Time.deltaTime);
+        if (transform.position.y<-5)
+        {
+            transform.position = posicionInical;
+            rb.AddForce(new Vector3( 0, 0.0f, 0)*0);
+        }
         
 
         // recogemos los datos del acelerometro
@@ -70,9 +83,21 @@ public class PlayerController1 : MonoBehaviour
     {
         if (other.gameObject.CompareTag("pickup"))
         {
-            contador++;
-            Debug.Log("Has destruido "+contador+" cubos");
+            contadorAmarillo++;
+            Debug.Log("Has destruido "+contadorAmarillo+" cubos");
             other.gameObject.SetActive(false);
+        }
+        
+        if (other.gameObject.CompareTag("cambioCam"))
+        {
+            cambioCamera++;
+            other.gameObject.SetActive(false);
+            
+        }
+
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            fin = true;
         }
     }
 }

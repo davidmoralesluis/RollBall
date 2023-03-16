@@ -1,27 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class CameraController : MonoBehaviour
 {
-    public GameObject ObjectoAseguir;
+    public Camera camVerde;
+    public Camera camRojo;
+    public GameObject player;
+    private bool cam2;
 
-    private Vector3 offset;
 
     // Start is called before the first frame update
     void Start()
     {
-        // position camera - player1
-        offset = transform.position - ObjectoAseguir.transform.position;
-        Debug.Log("offset:" +offset.magnitude);
+        camVerde.enabled = true;
+        camRojo.enabled = false;
+        cam2 = false;
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = ObjectoAseguir.transform.position + offset;
+        if (PlayerController1.cambioCamera==2)
+        {
+            camVerde.enabled = false;
+            camRojo.enabled = true;
+            cam2 = true;
+        }
         
+        transform.position = player.transform.position + new Vector3(0, 10, -15);
     }
 
 
